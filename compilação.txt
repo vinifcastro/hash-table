@@ -1,0 +1,3 @@
+gcc -c Hash-TAD-C.c
+gcc -c Hash-TAD-main.c
+gcc -o hash Hash-TAD-C.o Hash-TAD-main.o
