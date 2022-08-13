@@ -14,7 +14,7 @@ int CriaHash(){
     fseek(file,0,SEEK_SET);
     while(fscanf(file,"%d;",&n)!=EOF){
         x = fgets(nome, 20, file);
-        i = n%40009;
+        i = n%PRIME;
         inserirno(&tabelahash[i], n, nome);
         n = 0;
         aux = tabelahash[i].inicio;
@@ -29,7 +29,7 @@ int BuscaHash(int chave, float media)
 {
     No* aux;
     int k=1;
-    int i = chave%40009, j = 1;
+    int i = chave%PRIME, j = 1;
     aux = tabelahash[i].inicio;
     while(aux){
         if(aux->id == chave){ 
