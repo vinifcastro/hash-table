@@ -47,3 +47,5 @@ typedef struct Lista{
 Lista tabelahash[TAM];
 
 void inserirno(Lista * lista, int a, char * b);
+
+void liberahashtable(No**No);

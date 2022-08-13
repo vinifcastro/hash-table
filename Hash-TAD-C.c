@@ -27,7 +27,22 @@ int CriaHash(){
 
 int BuscaHash(int chave, float media)
 {
-
+    No* aux;
+    int k=1;
+    int i = chave%40009, j = 1;
+    aux = tabelahash[i].inicio;
+    while(aux){
+        if(aux->id == chave){ 
+            printf("Nome referente a chave %d e: %s\nNumero de buscas: %d\n", chave, aux->name, k);
+            j=0;
+            break;
+        }
+        aux = aux->prox;
+        k++;
+    }
+    if(j){
+        printf("Chave %d nao encontrada!\n\nNumero de buscas %d.\n", chave, k);
+    }
 }
 
 void inserirno(Lista * lista, int a, char * b){
@@ -38,4 +53,16 @@ void inserirno(Lista * lista, int a, char * b){
     novo->prox = lista->inicio;
     strcpy(novo->name, b);
     lista->inicio = novo;
+}
+
+void liberahashtable(No**raiz){
+    No * aux;
+    if(*raiz==NULL) return;
+    else{
+        while(*raiz!=NULL){
+            aux = *raiz;
+            *raiz = aux->prox;
+            free(aux);
+        }
+    }
 }

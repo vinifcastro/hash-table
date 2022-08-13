@@ -12,10 +12,11 @@ int main()
 {
     CriaHash();
     float media = 0;
-    int chaves[10] = {9183686, 4097337, 7081986, 1736712, 7859086, 2204209, 2201715, 138480, 7591640, 8214215};
+    int chaves[10] = {40009, 80018, 0, 2, 120027, 7878107, 4222497, 5748520, 8282987, 10};
 
     for (int i = 0; i < 10; i++)
     {
+        printf("\n------------------------------------------------------------\n");
         gettimeofday(&inicio, NULL);
 
         BuscaHash(chaves[i], media);
@@ -27,6 +28,10 @@ int main()
             media += GET_MS(inicio, fim);
         }
     }
+
+    for(int z=0; z <TAM;z++) liberahashtable(&(tabelahash[z].inicio));
+
     printf("\nTempo Medio execucao: %f ms\n\n", media / 9);
+
     return 0;
 }
