@@ -1,9 +1,7 @@
 /* Compilacao */
 /* gcc -o Hash-TAD Hash-TAD-C.c Hash-TAD-main.c -lm */
 
-#include <stdio.h>
 #include "Hash-TAD-H.h"
-#include <stdlib.h>
 
 #define GET_MS(ini, fim) ((fim.tv_sec * 1000000 + fim.tv_usec) - (ini.tv_sec * 1000000 + ini.tv_usec))
 struct timeval inicio, fim;

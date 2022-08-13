@@ -1,19 +1,19 @@
-#include <stdio.h>
 #include "Hash-TAD-H.h"
 
 int CriaHash(){
     FILE *file = NULL;
     No * aux;
     char nome[20];
+    char *x;
     int i;
-    long int n;
+    int n;
     for(i=0; i<TAM; i++){
         tabelahash[i].inicio = NULL;
     }
     file = fopen("Correcao_Hash.txt", "r+");
     fseek(file,0,SEEK_SET);
     while(fscanf(file,"%d;",&n)!=EOF){
-        fgets(nome, 20, file);
+        x = fgets(nome, 20, file);
         i = n%40009;
         inserirno(&tabelahash[i], n, nome);
         n = 0;
@@ -43,6 +43,7 @@ int BuscaHash(int chave, float media)
     if(j){
         printf("Chave %d nao encontrada!\n\nNumero de buscas %d.\n", chave, k);
     }
+    return 0;
 }
 
 void inserirno(Lista * lista, int a, char * b){

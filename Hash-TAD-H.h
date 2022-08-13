@@ -1,10 +1,12 @@
+#include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #ifndef _TIMES_H
 #define _TIMES_H
 
 #ifdef __linux__
-    #include <sys/times.h>
+    #include <sys/time.h>
 #elif _WIN32
 	#include <sys/timeb.h>
 	#include <sys/types.h>
