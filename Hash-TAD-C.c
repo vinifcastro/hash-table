@@ -1,5 +1,7 @@
 #include "Hash-TAD-H.h"
 
+extern Lista tabelahash[TAM];
+
 int CriaHash(){
     FILE *file = NULL;
     No * aux;

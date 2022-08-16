@@ -3,6 +3,8 @@
 
 #include "Hash-TAD-H.h"
 
+Lista tabelahash[TAM];
+
 #define GET_MS(ini, fim) ((fim.tv_sec * 1000000 + fim.tv_usec) - (ini.tv_sec * 1000000 + ini.tv_usec))
 struct timeval inicio, fim;
 
