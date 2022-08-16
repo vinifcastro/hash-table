@@ -43,7 +43,7 @@ int BuscaHash(int chave, float media)
         k++;
     }
     if(j){
-        printf("Chave %d nao encontrada!\n\nNumero de buscas %d.\n", chave, k);
+        printf("Chave %d nao encontrada!\n\nNumero de buscas %d.\n", chave, k-1);
     }
     return 0;
 }
