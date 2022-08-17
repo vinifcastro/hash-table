@@ -18,10 +18,6 @@ int CriaHash(){
         x = fgets(nome, 20, file);
         i = n%PRIME;
         inserirno(&tabelahash[i], n, nome);
-        n = 0;
-        aux = tabelahash[i].inicio;
-        n = aux->id;
-        strcpy(nome, aux->name);
     }
     fclose(file);
     return 0;
